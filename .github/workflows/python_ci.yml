@@ -42,6 +42,7 @@ jobs:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
     steps:
+    - run: echo "the api key secret ?? ${{secrets.RENDER_API_KEY}}"
     - uses: actions/checkout@v2
     - name: Deploy to Render
       uses: JorgeLNJunior/render-deploy@v1.4.4
